@@ -323,14 +323,18 @@
 @radio-solid-checked-color: @component-background;
 
 // Radio buttons
-@radio-button-bg: @btn-default-bg;
-@radio-button-checked-bg: @btn-default-bg;
-@radio-button-color: @btn-default-color;
-@radio-button-hover-color: @primary-5;
-@radio-button-active-color: @primary-7;
+@radio-button-bg: @white;
+@radio-button-checked-bg: @blue-600;//@btn-default-bg;
+@radio-button-color: @navy-600;
+@radio-button-hover-color: @blue-600;//@primary-5;
+@radio-button-active-color: @white;//@primary-7;
 @radio-disabled-button-checked-bg: tint(@black, 90%);
 @radio-disabled-button-checked-color: @disabled-color;
 @radio-wrapper-margin-right: 8px;
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled),
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+	color: @white;
+}
 
 // Media queries breakpoints
 // Extra small screen / phone
@@ -601,7 +605,7 @@
 @menu-bg: @navy-600;
 @menu-popup-bg: @component-background;
 @menu-item-color: @white;
-@menu-highlight-color: @grey-600;;
+@menu-highlight-color: @grey-600;
 @menu-highlight-danger-color: @error-color;
 @menu-item-active-bg: @primary-1;
 @menu-item-active-danger-bg: @red-1;
@@ -620,15 +624,18 @@
 // dark theme
 @menu-dark-color: @text-color-secondary-dark;
 @menu-dark-danger-color: @error-color;
-@menu-dark-bg: @navy-600;;
+@menu-dark-bg: @navy-600;
 @menu-dark-arrow-color: @white;
-@menu-dark-submenu-bg: #000c17;
+@menu-dark-submenu-bg: @navy-600;
 @menu-dark-highlight-color: @white;
 @menu-dark-item-active-bg: @primary-color;
 @menu-dark-item-active-danger-bg: @error-color;
 @menu-dark-selected-item-icon-color: @white;
 @menu-dark-selected-item-text-color: @white;
-@menu-dark-item-hover-bg: transparent;
+// @menu-dark-hover-bg: @grey-600;
+@menu-dark-item-hover-bg: @primary-color;
+// @menu-dark-item-highlight-color: @white;
+
 // Spin
 // ---
 @spin-dot-size-sm: 14px;
@@ -1112,6 +1119,7 @@ span.italic{
 }
 
 
+
 .text-left{ text-align: left; }
 .text-right{ text-align: right; }
 .text-center{ text-align: center; }
@@ -1123,6 +1131,38 @@ span.italic{
 .text-underlined:focus{ 
 	text-decoration: underline; 
 }
+
+.bg-white{
+	background-color: @white;
+}
+.bg-aqua{
+	background-color: @aqua-600;
+}
+.bg-navy{
+	background-color: @navy-600;
+}
+.bg-blue{
+	background-color: @blue-600;
+}
+.bg-grey{
+	background-color: @grey-600;
+}
+
+.rounded-sm{border-radius: 0.125rem;}
+.rounded{border-radius: 0.25rem;}
+.rounded-lg {border-radius: .75rem;}
+
+// shadow 
+.shadow-sm{
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.shadow{
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.shadow-lg{
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 
 .ant-form{
 	margin: 0 auto;
@@ -1214,6 +1254,12 @@ span.italic{
 	border-color: @blue-600;
 }
 
+.ant-radio-wrapper {
+	display: inline-flex;
+	align-items: center;
+}
+
+
 .ant-form-explain, 
 .ant-form-extra {
 	font-size: 14px;
@@ -1279,10 +1325,12 @@ span.italic{
 	margin: 1rem 0;
 }
 
-.ant-carousel .slick-slide{
-	margin-bottom: 1rem;
+.ant-carousel .slick-slider{
+	margin-bottom: 0.25rem;
 }
-
+.ant-carousel .slick-dots-bottom{
+	bottom:0px;
+}
 
 
 .ant-btn{
