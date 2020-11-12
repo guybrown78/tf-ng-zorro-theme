@@ -479,7 +479,7 @@
 // Mentions
 // ---
 @mentions-dropdown-bg: @component-background;
-@mentions-dropdown-menu-item-hover-bg: @mentions-dropdown-bg;
+@mentions-dropdown-menu-item-hover-bg: @grey-600;
 
 // Select
 // ---
@@ -1302,6 +1302,10 @@ span.italic{
 	background-color: @grey-600;
 	color: @navy-600;
 }
+
+.ant-dropdown-menu .ant-dropdown-menu-item:hover{
+	background-color: @grey-600;
+}
 .ant-menu.user-account .ant-menu-item:hover, 
 .ant-menu.user-account .ant-menu-submenu-title:hover{
 	background-color: @grey-700;
@@ -1361,6 +1365,35 @@ span.italic{
 	box-shadow: 0 0 0 3px rgba(@blue-300, 0.5);
 }
 
+
+// outline
+.ant-btn.ant-btn-default.outline, 
+.ant-btn.outline-blue, 
+.ant-btn.outline{
+	background-color: transparent;
+	color: @blue-600;
+	border-color: @blue-600;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.ant-btn-default.outline:hover, 
+.ant-btn.outline-blue:hover, 
+.ant-btn.outline:hover{
+	background-color: transparent;
+	color: @blue-400;
+	border-color: @blue-400;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.ant-btn-default.outline:focus, 
+.ant-btn.outline-blue:focus, 
+.ant-btn.outline:focus{
+	background-color: transparent;
+	border-color:@blue-600;
+	box-shadow: 0 0 0 3px rgba(@blue-300, 0.5);
+}
+
+
 // Aqua and Primary
 .ant-btn.ant-btn-primary, .ant-btn.aqua{
 	background-color: @aqua-600;
@@ -1371,6 +1404,29 @@ span.italic{
 	color: @navy-400;
 }
 .ant-btn.ant-btn-primary:focus, .ant-btn.aqua:focus{
+	border-color:@aqua-600;
+	box-shadow: 0 0 0 3px rgba(@aqua-300, 0.5);
+}
+// outline
+.ant-btn.ant-btn-primary.outline, 
+.ant-btn.outline-aqua{
+	background-color: transparent;
+	color: @aqua-600;
+	border-color: @aqua-600;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.ant-btn-primary.outline:hover, 
+.ant-btn.outline-aqua:hover{
+	background-color: transparent;
+	color: @aqua-400;
+	border-color: @aqua-400;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.ant-btn-primary.outline:focus, 
+.ant-btn.outline-aqua:focus{
+	background-color: transparent;
 	border-color:@aqua-600;
 	box-shadow: 0 0 0 3px rgba(@aqua-300, 0.5);
 }
@@ -1388,7 +1444,26 @@ span.italic{
 	border-color:@navy-600;
 	box-shadow: 0 0 0 3px rgba(@navy-300, 0.5);
 }
-
+// navy outline
+.ant-btn.outline-navy{
+	background-color: transparent;
+	color: @navy-600;
+	border-color: @navy-600;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.outline-navy:hover{
+	background-color: transparent;
+	color: @navy-400;
+	border-color: @navy-400;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.outline-navy:focus{
+	background-color: transparent;
+	border-color:@navy-600;
+	box-shadow: 0 0 0 3px rgba(@navy-300, 0.5);
+}
 // Grey
 .ant-btn.grey{
 	background-color: @grey-600;
@@ -1402,7 +1477,26 @@ span.italic{
 	border-color:@grey-600;
 	box-shadow: 0 0 0 3px rgba(@grey-300, 0.5);
 }
-
+// grey outline
+.ant-btn.outline-grey{
+	background-color: transparent;
+	color: @grey-600;
+	border-color: @grey-600;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.outline-grey:hover{
+	background-color: transparent;
+	color: @grey-400;
+	border-color: @grey-400;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.outline-grey:focus{
+	background-color: transparent;
+	border-color:@grey-600;
+	box-shadow: 0 0 0 3px rgba(@grey-300, 0.5);
+}
 // Red and Danger
 .ant-btn.ant-btn-dangerous, .ant-btn.red{
 	background-color: @error-color;
@@ -1414,6 +1508,26 @@ span.italic{
 }
 .ant-btn.ant-btn-dangerous:focus, .ant-btn.red:focus{
 	border-color:@error-color;
+	box-shadow: 0 0 0 3px rgba(@red-300, 0.5);
+}
+// Red/Danger outline
+.ant-btn.ant-btn-dangerous.outline, .ant-btn.outline-red{
+	background-color: transparent;
+	color: @red-600;
+	border-color: @red-600;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.ant-btn-dangerous.outline:hover, .ant-btn.outline-red:hover{
+	background-color: transparent;
+	color: @red-400;
+	border-color: @red-400;
+	text-shadow: none;
+	box-shadow: none;
+}
+.ant-btn.ant-btn-dangerous.outline:focus, .ant-btn.outline-red:focus{
+	background-color: transparent;
+	border-color:@red-600;
 	box-shadow: 0 0 0 3px rgba(@red-300, 0.5);
 }
 
@@ -1433,6 +1547,22 @@ span.italic{
 	background-color: @blue-200;
 	border-color: @blue-300;
 }
+// ouline
+.ant-btn.outline-blue[disabled], 
+.ant-btn.ant-btn-default.outline[disabled], 
+.ant-btn.outline-blue[disabled]:hover, 
+.ant-btn.ant-btn-default.outline[disabled]:hover,
+.ant-btn.outline-blue[disabled]:focus, 
+.ant-btn.ant-btn-default.outline[disabled]:focus, 
+.ant-btn.outline-blue[disabled]:active, 
+.ant-btn.ant-btn-default.outline[disabled]:active
+{
+	color: @blue-300;
+	background-color: transparent;
+	border-color: @blue-300;
+	text-shadow: none;
+	box-shadow: none;
+}
 
 .ant-btn.aqua[disabled], 
 .ant-btn.ant-btn-primary[disabled], 
@@ -1446,6 +1576,21 @@ span.italic{
 	background-color: @aqua-200;
 	border-color: @aqua-300;
 }
+// outline
+.ant-btn.outline-aqua[disabled], 
+.ant-btn.ant-btn-primary.outline[disabled], 
+.ant-btn.outline-aqua[disabled]:hover, 
+.ant-btn.ant-btn-primary.outline[disabled]:hover,
+.ant-btn.outline-aqua[disabled]:focus, 
+.ant-btn.ant-btn-primary.outline[disabled]:focus, 
+.ant-btn.outline-aqua[disabled]:active, 
+.ant-btn.ant-btn-primary.outline[disabled]:active {
+	color: @aqua-300;
+	background-color: transparent;
+	border-color: @aqua-300;
+	text-shadow: none;
+	box-shadow: none;
+}
 
 .ant-btn.grey[disabled], 
 .ant-btn.grey[disabled]:hover, 
@@ -1455,6 +1600,17 @@ span.italic{
 	background-color: @grey-200;
 	border-color: @grey-300;
 }
+// outline
+.ant-btn.outline-grey[disabled], 
+.ant-btn.outline-grey[disabled]:hover, 
+.ant-btn.outline-grey[disabled]:focus, 
+.ant-btn.outline-grey[disabled]:active {
+	color: @grey-300;
+	background-color: transparent;
+	border-color: @grey-300;
+	text-shadow: none;
+	box-shadow: none;
+}
 
 .ant-btn.navy[disabled], 
 .ant-btn.navy[disabled]:hover, 
@@ -1463,6 +1619,17 @@ span.italic{
 	color: @grey-400;
 	background-color: @navy-200;
 	border-color: @navy-300;
+}
+// outline
+.ant-btn.outline-navy[disabled], 
+.ant-btn.outline-navy[disabled]:hover, 
+.ant-btn.outline-navy[disabled]:focus, 
+.ant-btn.outline-navy[disabled]:active {
+	color: @navy-300;
+	background-color: transparent;
+	border-color: @navy-300;
+	text-shadow: none;
+	box-shadow: none;
 }
 
 .ant-btn.red[disabled], 
@@ -1476,6 +1643,21 @@ span.italic{
 	color: @red-400;
 	background-color: @red-200;
 	border-color: @red-300;
+}
+// outline
+.ant-btn.outline-red[disabled], 
+.ant-btn.ant-btn-dangerous.outline[disabled], 
+.ant-btn.outline-red[disabled]:hover, 
+.ant-btn.ant-btn-dangerous.outline[disabled]:hover,
+.ant-btn.outline-red[disabled]:focus, 
+.ant-btn.ant-btn-dangerous.outline[disabled]:focus,  
+.ant-btn.outline-red[disabled]:active, 
+.ant-btn.ant-btn-dangerous.outline[disabled]:active{
+	color: @red-300;
+	background-color: transparent;
+	border-color: @red-300;
+	text-shadow: none;
+	box-shadow: none;
 }
 
 .ant-table-small {
@@ -1688,4 +1870,26 @@ span.italic{
 
 .ant-collapse-borderless > .ant-collapse-item > .ant-collapse-content {
 	width:100%;
+}
+
+.tf-app-quick-link-btn{
+	background-color: transparent;
+	width:50px;
+	height:58px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: @navy-600;
+}
+.tf-app-quick-link-btn:focus,
+.tf-app-quick-link-btn:hover,
+.tf-app-quick-link-btn:active{
+	color: @navy-600;
+	outline: none;
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow:none;
+}
+.anticon{
+	font-size: 20px;
 }
