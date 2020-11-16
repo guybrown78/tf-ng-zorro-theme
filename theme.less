@@ -978,8 +978,8 @@
 
 // List
 // ---
-@list-header-background: transparent;
-@list-footer-background: transparent;
+@list-header-background: @grey-600;
+@list-footer-background: @grey-600;
 @list-empty-text-padding: @padding-md;
 @list-item-padding: @padding-sm 0;
 @list-item-padding-sm: @padding-xs @padding-md;
@@ -1777,13 +1777,19 @@ span.italic{
 	padding: 8px 8px;
 }
 
-.ant-table-thead > tr > th{
-	padding-top: 4px;
-	padding-bottom: 4px;
+.tf-app-column-header-text,
+.ant-table-thead > tr > th,
+.ant-list-header,
+.ant-list-footer{
 	font-size: 0.8rem;
 	text-transform: uppercase;
 }
- 
+
+.ant-table-thead > tr > th{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
 
 .ant-list-header, 
 .ant-list-footer, 
@@ -1793,11 +1799,9 @@ span.italic{
 .ant-list-header, .ant-list-footer {
 	padding-top: 4px;
 	padding-bottom: 4px;
-	font-size: 0.8rem;
-	text-transform: uppercase;
 }
-.ant-list-item{
-	background-color: #FFFFFF;
+.ant-list{
+	background-color: @white;
 } 
 
 .ant-list-item .ant-row{
@@ -2006,4 +2010,13 @@ span.italic{
 }
 .ant-upload-list-item-error .ant-upload-list-item-card-actions .anticon {
 	color: @white; 
+}
+
+.ant-empty-image {
+	height: 40px;
+	margin-bottom: 8px;
+}
+.ant-empty-normal,
+.ant-empty{
+	color: @grey-600;
 }
