@@ -566,7 +566,7 @@
 // --
 @modal-header-padding-vertical: @padding-md;
 @modal-header-padding-horizontal: @padding-lg;
-@modal-body-padding: @padding-lg;
+@modal-body-padding: @padding-md;
 @modal-header-bg: @component-background;
 @modal-header-padding: @modal-header-padding-vertical @modal-header-padding-horizontal;
 @modal-header-border-width: @border-width-base;
@@ -581,11 +581,11 @@
 @modal-footer-bg: transparent;
 @modal-footer-border-color-split: @border-color-split;
 @modal-footer-border-style: @border-style-base;
-@modal-footer-padding-vertical: 10px;
+@modal-footer-padding-vertical: @padding-md;
 @modal-footer-padding-horizontal: 16px;
 @modal-footer-border-width: @border-width-base;
 @modal-mask-bg: fade(@black, 45%);
-@modal-confirm-body-padding: 32px 32px 24px;
+@modal-confirm-body-padding: @padding-lg 0 @padding-md;
 
 // Progress
 // --
@@ -645,7 +645,7 @@
 // Table
 // --
 @table-bg: @component-background;
-@table-header-bg: @background-color-light;
+@table-header-bg: @grey-600;
 @table-header-color: @navy-600;
 @table-header-sort-bg: @background-color-base;
 @table-body-sort-bg: #fafafa;
@@ -862,7 +862,7 @@
 @page-header-padding-vertical: @padding-md;
 @page-header-padding-breadcrumb: @padding-sm;
 @page-header-content-padding-vertical: @padding-sm;
-@page-header-back-color: #000;
+@page-header-back-color: @navy-600;
 @page-header-ghost-bg: inherit;
 @page-header-heading-title: @heading-4-size;
 @page-header-heading-sub-title: 14px;
@@ -1117,9 +1117,22 @@ a.aqua:hover, a.aqua:focus, a.aqua:active{
 span.italic{
 	font-style: italic;
 }
-
-
-
+.text-sm{
+	font-size: 14px;
+	line-height: 14px;
+}
+.text-md{
+	font-size: 16px;
+	line-height: 1.5715;
+}
+.text-lg{
+	font-size: 18px;
+	line-height: 18px;
+}
+.text-xl{
+	font-size: 20px;
+	line-height: 20px;
+}
 .text-left{ text-align: left; }
 .text-right{ text-align: right; }
 .text-center{ text-align: center; }
@@ -1131,6 +1144,7 @@ span.italic{
 .text-underlined:focus{ 
 	text-decoration: underline; 
 }
+
 
 .bg-white{
 	background-color: @white;
@@ -1195,6 +1209,8 @@ span.italic{
 }
 .form-hero-card .ant-form{
 	width: 100%!important;
+	padding-top:0;
+	padding-bottom: 0;
 }
 .ant-form-item-control-wrapper{
 	width:100%;
@@ -1273,6 +1289,11 @@ span.italic{
 	text-align: left;
 	width: 100%;
 }
+
+.ant-select-arrow {
+	margin-top: -11px;
+}
+
 // .ant-form-item-label{
 // 	width: 100%;
 // }
@@ -1339,6 +1360,7 @@ span.italic{
 
 .ant-btn{
 	text-transform: uppercase;
+	line-height: 1.3rem;
 }
 .ant-btn, .ant-btn:hover, .ant-btn:focus, .ant-btn:active{
 	border-color:transparent;
@@ -1349,7 +1371,10 @@ span.italic{
 .ant-btn-sm {
 	font-size: 14px;
 }
-
+.ant-btn .anticon {
+	// vertical-align: -0.185em;
+	vertical-align: -4px;
+}
 
 // Blue and Default
 .ant-btn.ant-btn-default, .ant-btn.blue, .ant-btn{
@@ -1369,7 +1394,9 @@ span.italic{
 // outline
 .ant-btn.ant-btn-default.outline, 
 .ant-btn.outline-blue, 
-.ant-btn.outline{
+.ant-btn.outline,
+.ant-modal-footer .ant-btn,
+.ant-modal-confirm-btns .ant-btn{
 	background-color: transparent;
 	color: @blue-600;
 	border-color: @blue-600;
@@ -1378,7 +1405,9 @@ span.italic{
 }
 .ant-btn.ant-btn-default.outline:hover, 
 .ant-btn.outline-blue:hover, 
-.ant-btn.outline:hover{
+.ant-btn.outline:hover,
+.ant-modal-footer .ant-btn:hover,
+.ant-modal-confirm-btns .ant-btn:hover{
 	background-color: transparent;
 	color: @blue-400;
 	border-color: @blue-400;
@@ -1387,23 +1416,52 @@ span.italic{
 }
 .ant-btn.ant-btn-default.outline:focus, 
 .ant-btn.outline-blue:focus, 
-.ant-btn.outline:focus{
+.ant-btn.outline:focus,
+.ant-modal-footer .ant-btn:focus,
+.ant-modal-confirm-btns .ant-btn:focus{
 	background-color: transparent;
+	border-color:@blue-600;
+	box-shadow: 0 0 0 3px rgba(@blue-300, 0.5);
+}
+
+// set this after standard default
+.ant-modal-footer .ant-btn.ant-btn-default,
+.ant-modal-confirm-btns .ant-btn.ant-btn-default{
+	border-color:transparent;
+	background-color: @blue-600;
+	color: #FFFFFF;
+}
+
+.ant-modal-footer .ant-btn.ant-btn-default:hover,
+.ant-modal-confirm-btns .ant-btn.ant-btn-default:hover{
+	background-color: @blue-400;
+	color: @grey-200;
+}
+
+.ant-modal-footer .ant-btn.ant-btn-default:focus,
+.ant-modal-confirm-btns .ant-btn.ant-btn-default:focus{
 	border-color:@blue-600;
 	box-shadow: 0 0 0 3px rgba(@blue-300, 0.5);
 }
 
 
 // Aqua and Primary
-.ant-btn.ant-btn-primary, .ant-btn.aqua{
+.ant-btn.ant-btn-primary, .ant-btn.aqua,
+.ant-modal-footer .ant-btn.ant-btn-primary,
+.ant-modal-confirm-btns .ant-btn.ant-btn-primary{
+	border-color:transparent;
 	background-color: @aqua-600;
 	color: @navy-600;
 }
-.ant-btn.ant-btn-primary:hover, .ant-btn.aqua:hover{
+.ant-btn.ant-btn-primary:hover, .ant-btn.aqua:hover,
+.ant-modal-footer .ant-btn.ant-btn-primary:hover,
+.ant-modal-confirm-btns .ant-btn.ant-btn-primary:hover{
 	background-color: @aqua-400;
 	color: @navy-400;
 }
-.ant-btn.ant-btn-primary:focus, .ant-btn.aqua:focus{
+.ant-btn.ant-btn-primary:focus, .ant-btn.aqua:focus,
+.ant-modal-footer .ant-btn.ant-btn-primary:focus,
+.ant-modal-confirm-btns .ant-btn.ant-btn-primary:focus{
 	border-color:@aqua-600;
 	box-shadow: 0 0 0 3px rgba(@aqua-300, 0.5);
 }
@@ -1433,6 +1491,7 @@ span.italic{
 
 // Navy
 .ant-btn.navy{
+	border-color: transparent;
 	background-color: @navy-600;
 	color: #FFFFFF;
 }
@@ -1466,6 +1525,7 @@ span.italic{
 }
 // Grey
 .ant-btn.grey{
+	border-color: transparent;
 	background-color: @grey-600;
 	color: @navy-600;
 }
@@ -1498,34 +1558,51 @@ span.italic{
 	box-shadow: 0 0 0 3px rgba(@grey-300, 0.5);
 }
 // Red and Danger
-.ant-btn.ant-btn-dangerous, .ant-btn.red{
+.ant-btn.ant-btn-dangerous,
+.ant-btn.ant-btn-danger,
+.ant-btn.red,
+.ant-modal-footer .ant-btn.ant-btn-danger,
+.ant-modal-footer .ant-btn.ant-btn-dangerous,
+.ant-modal-confirm-btns .ant-btn.ant-btn-danger,
+.ant-modal-confirm-btns .ant-btn.ant-btn-dangerous{
+	border-color: transparent;
 	background-color: @error-color;
 	color: #FFFFFF;
 }
-.ant-btn.ant-btn-dangerous:hover, .ant-btn.red:hover{
+.ant-btn.ant-btn-dangerous:hover,
+.ant-btn.ant-btn-danger:hover,
+.ant-btn.red:hover{
 	background-color: @error-color;
 	color: @grey-200;
 }
-.ant-btn.ant-btn-dangerous:focus, .ant-btn.red:focus{
+.ant-btn.ant-btn-dangerous:focus,
+.ant-btn.ant-btn-danger:focus,
+.ant-btn.red:focus{
 	border-color:@error-color;
 	box-shadow: 0 0 0 3px rgba(@red-300, 0.5);
 }
 // Red/Danger outline
-.ant-btn.ant-btn-dangerous.outline, .ant-btn.outline-red{
+.ant-btn.ant-btn-dangerous.outline,
+.ant-btn.ant-btn-danger.outline,
+.ant-btn.outline-red{
 	background-color: transparent;
 	color: @red-600;
 	border-color: @red-600;
 	text-shadow: none;
 	box-shadow: none;
 }
-.ant-btn.ant-btn-dangerous.outline:hover, .ant-btn.outline-red:hover{
+.ant-btn.ant-btn-dangerous.outline:hover,
+.ant-btn.ant-btn-danger.outline:hover,
+.ant-btn.outline-red:hover{
 	background-color: transparent;
 	color: @red-400;
 	border-color: @red-400;
 	text-shadow: none;
 	box-shadow: none;
 }
-.ant-btn.ant-btn-dangerous.outline:focus, .ant-btn.outline-red:focus{
+.ant-btn.ant-btn-dangerous.outline:focus,
+.ant-btn.ant-btn-danger.ouline:focus,
+.ant-btn.outline-red:focus{
 	background-color: transparent;
 	border-color:@red-600;
 	box-shadow: 0 0 0 3px rgba(@red-300, 0.5);
@@ -1634,12 +1711,16 @@ span.italic{
 
 .ant-btn.red[disabled], 
 .ant-btn.ant-btn-dangerous[disabled], 
+.ant-btn.ant-btn-danger[disabled],
 .ant-btn.red[disabled]:hover, 
 .ant-btn.ant-btn-dangerous[disabled]:hover,
+.ant-btn.ant-btn-danger[disabled]:hover,
 .ant-btn.red[disabled]:focus, 
 .ant-btn.ant-btn-dangerous[disabled]:focus,  
+.ant-btn.ant-btn-danger[disabled]:focus,
 .ant-btn.red[disabled]:active, 
-.ant-btn.ant-btn-dangerous[disabled]:active{
+.ant-btn.ant-btn-dangerous[disabled]:active,
+.ant-btn.ant-btn-danger[disabled]:active{
 	color: @red-400;
 	background-color: @red-200;
 	border-color: @red-300;
@@ -1647,12 +1728,16 @@ span.italic{
 // outline
 .ant-btn.outline-red[disabled], 
 .ant-btn.ant-btn-dangerous.outline[disabled], 
+.ant-btn.ant-btn-danger.outline[disabled],
 .ant-btn.outline-red[disabled]:hover, 
 .ant-btn.ant-btn-dangerous.outline[disabled]:hover,
+.ant-btn.ant-btn-danger.outline[disabled]:hover,
 .ant-btn.outline-red[disabled]:focus, 
 .ant-btn.ant-btn-dangerous.outline[disabled]:focus,  
+.ant-btn.ant-btn-danger.outline[disabled]:focus,
 .ant-btn.outline-red[disabled]:active, 
-.ant-btn.ant-btn-dangerous.outline[disabled]:active{
+.ant-btn.ant-btn-dangerous.outline[disabled]:active,
+.ant-btn.ant-btn-danger.outline[disabled]:active{
 	color: @red-300;
 	background-color: transparent;
 	border-color: @red-300;
@@ -1848,7 +1933,7 @@ span.italic{
 	border-radius: 9999px;
 }
 .ant-message {
-	top:73px!important;
+	top:38px!important;
 	// bottom: 24px;
 }
 .ant-message .anticon {
@@ -1859,9 +1944,31 @@ span.italic{
 	padding:0 1rem;
 	border-radius: 0.5rem;
 }
+.ant-modal-body{
+	padding-left:0;
+	padding-right:0;
+}
+.ant-modal-confirm-body .ant-modal-confirm-title {
+	line-height: 22px;
+}
 .ant-modal-footer {
 	border-top: none;
-	padding: 16px 0px;
+	padding: @padding-md 0px;
+}
+.ant-modal-footer,
+.ant-modal-confirm-btns{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width:100%;
+}
+.ant-modal-confirm-info .ant-modal-confirm-btns,
+.ant-modal-confirm-success .ant-modal-confirm-btns,
+.ant-modal-confirm-error .ant-modal-confirm-btns,
+.ant-modal-confirm-warning .ant-modal-confirm-btns,
+.tf-app-modal-single-btn .ant-modal-confirm-btns,
+.tf-app-modal-single-btn .ant-modal-footer{
+	justify-content: flex-end;
 }
 .ant-modal-header {
 	padding: 16px 0px;
