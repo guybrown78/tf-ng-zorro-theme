@@ -845,10 +845,10 @@
 // Pagination
 // ---
 @pagination-item-bg: @component-background;
-@pagination-item-size: @height-base;
+@pagination-item-size: 24px;
 @pagination-item-size-sm: 24px;
 @pagination-font-family: @font-family;
-@pagination-font-weight-active: 500;
+@pagination-font-weight-active: 400;
 @pagination-item-bg-active: @component-background;
 @pagination-item-link-bg: @component-background;
 @pagination-item-disabled-color-active: @white;
@@ -904,12 +904,12 @@
 // Tree
 // ---
 @tree-bg: @component-background;
-@tree-title-height: 24px;
-@tree-child-padding: 18px;
+@tree-title-height: 32px;
+@tree-child-padding: 8px;
 @tree-directory-selected-color: #fff;
-@tree-directory-selected-bg: @primary-color;
+@tree-directory-selected-bg: @grey-600;
 @tree-node-hover-bg: @item-hover-bg;
-@tree-node-selected-bg: @primary-2;
+@tree-node-selected-bg: @grey-600;
 
 // Collapse
 // ---
@@ -1073,6 +1073,13 @@
 @image-preview-operation-disabled-color: fade(@image-preview-operation-color, 45%);
 
 
+
+
+
+// IMPORTS
+
+@import "./tree.less";
+
 h1, h2, h3, h4, h5, h6 {
 	color: @blue-600;
 	font-weight: 500;
@@ -1143,6 +1150,9 @@ span.italic{
 .text-underlined:hover,
 .text-underlined:focus{ 
 	text-decoration: underline; 
+}
+.uppercase{
+	text-transform: uppercase;
 }
 
 
@@ -1898,22 +1908,28 @@ span.italic{
 // 	font-weight: 500;
 // }
 
-.ant-pagination.mini 
-.ant-pagination-prev, 
-.ant-pagination.mini 
-.ant-pagination-next,
+
 .ant-pagination-item {
-	min-width: 20px;
-	height: 20px;
-	margin: 0;
-	line-height: 18px;
-	font-size: 15px;
-}
-.ant-pagination-item {
-	font-family: 'Roboto Condensed';
+	font-family: @font-family;
 	background-color: @grey-600;
 	border: 1px solid @grey-600;
 	border-radius: 3px;
+}
+
+.ant-pagination .ant-pagination-prev, 
+.ant-pagination .ant-pagination-next,
+.ant-pagination-item {
+	min-width: 24px;
+	height: 24px;
+	margin: 0 1px;
+	line-height: 22px;
+	font-size: 15px;
+}
+.ant-pagination.mini .ant-pagination-prev, 
+.ant-pagination.mini .ant-pagination-next,
+.ant-pagination.mini .ant-pagination-item {
+	min-width: 20px;
+	margin: 0;
 }
 .ant-pagination-item-active, .ant-pagination-item-active:hover {
 	background-color:#FFF;
@@ -1931,7 +1947,9 @@ span.italic{
 	background-color: transparent;
 	border: 1px solid transparent;
 }
-
+.ant-table-pagination-right{
+	justify-content: center;
+}
 
 .ant-message-notice-content {
 	border-radius: 9999px;
@@ -2020,3 +2038,54 @@ span.italic{
 .ant-empty{
 	color: @grey-600;
 }
+
+.tf-host-block{
+  display: block;
+}
+.tf-block-size-xs,
+.tf-block-size-xsmall,
+.tf-block-size-extrasmall,
+.tf-block-size-extra-small{
+	width:32px;
+	height:36px;
+}
+.tf-block-size-s,
+.tf-block-size-small{
+	width:37px;
+	height:42px;
+}
+.tf-block-size-m,
+.tf-block-size-medium,
+.tf-block-size-default{
+	width:42px;
+	height:49px;
+}
+.tf-block-size-l,
+.tf-block-size-large{
+	width:47px;
+	height:54px;
+}
+.tf-block-size-xl,
+.tf-block-size-xlarge,
+.tf-block-size-extralarge,
+.tf-block-size-extra-large{
+	width:52px;
+	height:60px;
+}
+
+
+.tf-tooltip-white{
+	// @tooltip-color: @navy-600;
+	// Tooltip background color
+	// @tooltip-bg: rgba(255,255,255, 0.90);
+}
+
+.tf-tooltip-white .ant-tooltip-inner,
+.tf-tooltip-white .ant-tooltip-arrow-content
+{
+	color:@navy-600;
+	background-color: #ffffff;
+}
+
+
+
